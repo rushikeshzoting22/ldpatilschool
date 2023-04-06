@@ -316,6 +316,7 @@ margin: 20px 0;
 bottom: -30px;
 }
 .team-member {
+	height: 450px;
     text-align: center;
     background-color: #F9F9F9;
     padding-bottom: 15px;
