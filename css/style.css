@@ -256,7 +256,7 @@ right:0px;
   margin: 0 auto;
   padding: 1px;
   position: absolute;
-  vertical-align: bottom;
+  vertical-align:bottom ;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.06);
   bottom: 9%;
@@ -625,9 +625,9 @@ form#commentform textarea {
 	display: block;	
 }
 
-.work-nav #filters li a:hover {
+/* .work-nav #filters li a:hover {
 
-}
+} */
 
 .work-nav #filters li a.selected {
 	color: #DE5E60;
@@ -1083,9 +1083,9 @@ color: #222;
 	display:block;
 	color:#fff;
 }
-.pricing-box-item.activeItem .pricing-heading h3 {
+/* .pricing-box-item.activeItem .pricing-heading h3 {
 	 
-}
+} */
 
 .pricing-box-item .pricing-heading h3 strong {
 	font-size: 20px;
@@ -1327,7 +1327,7 @@ article img.pull-right, article .align-right{
 	float:right;
 	margin:5px 0 15px 15px;
 }
- ============================= */
+ /* ============================= */ 
 
 .clear-marginbot{
 	margin-bottom:0;
@@ -1453,9 +1453,23 @@ article img.pull-right, article .align-right{
 	transform: translate3d(0, 0, 0);
 } 
 
+/* Team section 
+============================= */
+.team-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10rem 1rem;
+	flex-shrink: initial;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10rem;
+}
+
 
 /*  Media queries 
 ============================= */
+
 
 @media (min-width: 768px) and (max-width: 979px) {
 
