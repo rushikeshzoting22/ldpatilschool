@@ -184,55 +184,120 @@ img.img-polaroid {
 /* Header
 ------------------------------------------------------------------------------*/
 
-#header {
-	padding: 8px 0 20px 0;
-	z-index: 99;
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 20px;
+	font-family: "Novecento Sans", "Raleway", "Noto Sans" "Open Sans", sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: normal; }
+		  *, *:before, *:after {
+	box-sizing: border-box; }
+  
+		  textarea {
+	font-family: sans-serif; }
+		  textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline; }
+		  input {
+	line-height: normal; }
+		  select {
+	text-transform: none; }
+		  input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer; }
+		  .site-header {
 	position: relative;
-}
-
-#logo {
-	width: 121px;
-	height: 134px;
-	display: block;
-	cursor: pointer;
-	margin: 0 auto -82px;
-	text-indent: -9999em;
-	background: url(../img/logo.png) no-repeat;
-	position: relative;
-	z-index: 3;
-}
-
-
-/* Navigation
-------------------------------------------------------------------------------*/
-
-#menu {
+	z-index: 999;
+	background: white;
 	text-align: center;
-}
-
-#menu ul {
-	padding: 0 80px;
-	display: inline-block;
-}
-
-#menu li {
-	float: left;
-	padding: 0 24px;
-}
-
-#menu a {
-	font-size: 21px;
-	line-height: 28px;
-	color: #8c929c;
-	font-family: 'BebasNeue';
-	display: block;
-}
-
-#menu a:hover,
-#menu .current a {
-	color: #008bc4;
-	text-decoration: underline;
-}
+	padding: 50px 0 30px; }
+  
+  .branding {
+	text-align: center; }
+	.branding .logo {
+	  margin-bottom: 10px; }
+	.branding .site-title {
+	  color: #8f7655;
+	  font-size: 14px;
+	  font-size: 1em; }
+  
+  .main-navigation {
+	border-top: 1px solid #e5e5e5; }
+	.main-navigation .menu-toggle {
+	  border: none;
+	  background: none;
+	  padding: 20px;
+	  display: none;
+	  font-family: "Novecento Sans", "Raleway", "Noto Sans" "Open Sans", sans-serif;
+	  text-transform: uppercase;
+	  outline: none; }
+	  @media screen and (max-width: 990px) {
+		.main-navigation .menu-toggle {
+		  display: inline-block; } }
+	.main-navigation .menu {
+	  list-style: none; }
+	  @media screen and (max-width: 990px) {
+		.main-navigation .menu {
+		  display: none; } }
+	  .main-navigation .menu .menu-item {
+		display: inline-block;
+		margin: 0 10px; }
+		.main-navigation .menu .menu-item a {
+		  display: block;
+		  padding: 20px 0;
+		  text-transform: uppercase;
+		  font-family: "Novecento Sans", "Raleway", "Noto Sans" "Open Sans", sans-serif;
+		  font-weight: 400;
+		  font-size: 18px;
+		  font-size: 1.2857142857em;
+		  border-bottom: 1px solid #e5e5e5;
+		  -webkit-transition: .3s ease;
+				  transition: .3s ease; }
+		  .main-navigation .menu .menu-item a small {
+			display: block;
+			color: #a59e95;
+			font-weight: 300;
+			font-size: 10px;
+			font-size: 0.7142857143rem; }
+		.main-navigation .menu .menu-item.current-menu-item a, .main-navigation .menu .menu-item:hover a {
+		  border-bottom-color: #8f7655;
+		  border-width: 2px; }
+  
+  .mobile-navigation {
+	padding: 30px 0;
+	display: none; }
+	@media screen and (min-width: 991px) {
+	  .mobile-navigation {
+		display: none !important; } }
+	.mobile-navigation .menu {
+	  list-style: none; }
+	  .mobile-navigation .menu .menu-item {
+		border-bottom: 1px solid #e5e5e5; }
+		.mobile-navigation .menu .menu-item:first-child {
+		  border-top: 1px solid #e5e5e5; }
+	  .mobile-navigation .menu a {
+		font-family: "Novecento Sans", "Raleway", "Noto Sans" "Open Sans", sans-serif;
+		text-transform: uppercase;
+		font-weight: 400;
+		display: block;
+		padding: 10px 20px; }
+		.mobile-navigation .menu a small {
+		  display: block;
+		  color: #a59e95; }
+		  .sname{
+			  margin-top: 2%;
+			  text-align: center;
+			  padding-top: 1%;
+			  padding-bottom: 1%;
+			  border: 2px solid;
+			  color: #72150f;
+			  font-weight: bolder;
+			  background-color:#ecc8b2;
+			  font-size: 320%;
+			  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		  }
 
 /*  Sliders
 ==================================== */
