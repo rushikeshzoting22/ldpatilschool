@@ -299,6 +299,24 @@ h1, h2, h3, h4, h5, h6 {
 			  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		  }
 
+		  .divider {
+			background: #e3a284 url(../img/bg_white_arrow.png) no-repeat 50% 0;
+			height: 60px;
+			position: relative;
+			margin-top: 3px;
+			margin-bottom: 37px;
+		}
+		
+		.divider:after {
+			background: url(../img/bg_white.png) no-repeat 50% 0;
+			height: 30px;
+			position: absolute;
+			content: "";
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
 /*  Sliders
 ==================================== */
 /* --- flexslider --- */
