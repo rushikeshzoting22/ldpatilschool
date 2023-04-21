@@ -14,13 +14,13 @@
 	<link href="css/flexslider.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 
-	<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script> -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js"></script> -->
 	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script> -->
 
-<!-- Firebase Storage -->
-<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js"></script>
+	<!-- Firebase Storage -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js"></script> -->
 
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -82,8 +82,7 @@
 										</a>
 										<img src="img/works/1.jpg" alt="">
 									</div>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
+
 								</div>
 							</section>
 						</div>
@@ -130,8 +129,86 @@
 			</div>
 		</footer>
 		<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-		<!-- javascript
-    ================================================== -->
+		<!-- javascript -->
+
+		<script type="module">
+			import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js'
+			// Add Firebase products that you want to use
+			import { ref, getDownloadURL, listAll, getStorage } from 'https://www.gstatic.com/firebasejs/9.20.0/firebase-storage.js'
+
+			const firebaseConfig = {
+				apiKey: "AIzaSyBmJnF7C3xwl91AkxpumnTx4u6MgE3maCg",
+				authDomain: "auth-e6b27.firebaseapp.com",
+				databaseURL: "https://auth-e6b27-default-rtdb.firebaseio.com",
+				projectId: "auth-e6b27",
+				storageBucket: "auth-e6b27.appspot.com",
+				messagingSenderId: "550089382652",
+				appId: "1:550089382652:web:afff1447205a3e235fd579"
+			};
+
+			const app = initializeApp(firebaseConfig);
+			const storage = getStorage(app);
+			// Points to the root reference
+			const storageRef = ref(storage);
+
+			// Points to 'images'
+			// const imagesRef = ref(storage, 'images');
+
+			let images = [];
+			const gallery = document.getElementById("thumbs");
+			let HTML = '';
+			const getURL = async () => {
+				try {
+					await listAll(storageRef).then((response) => {
+						response.items.forEach(imgRef => {
+							let i = 0;
+							getDownloadURL(imgRef).then((url) => {
+								HTML = `<div class="item-thumbs col-lg-3 col-md-4 col-sm-4 work design" data-id="id-${i}"
+										data-type="web">
+										<a class="work-box fancybox" data-fancybox-group="gallery" title="Gallery name"
+											href=${url}>
+											<div class="overlay">
+												<div class="overlay-caption">
+													<p><span class="fa fa-search"></span></p>
+												</div>
+											</div>
+										</a>
+										<img src=${url} alt="">`;
+
+										gallery.innerHTML += HTML;	
+							})
+							
+						});
+					});
+
+				} catch (error) {
+					console.log(4)
+					console.log(error.message)
+				}
+			}
+
+			getURL();
+
+
+			// try {
+			// 	listAll(imagesRef).then((response) => {
+			// 	console.log();
+			// 	response.items.forEach((item) => {
+			// 		getDownloadURL(item).then((url) => {
+			// 			// images = [...images , url]
+			// 			console.log();
+			// 		});
+			// 	});
+			// });
+			// } catch (error) {
+			// 	console.log(2)
+			// 	console.log(error)
+			// }
+
+		</script>
+
+
+		<!--  ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.easing.1.3.js"></script>
@@ -143,7 +220,7 @@
 		<script src="js/jquery.flexslider.js"></script>
 		<script src="js/animate.js"></script>
 		<script src="js/custom.js"></script>
-		<script src="js/gallary.js"></script>
+		<!-- <script src="js/gallary.js"></script> -->
 </body>
 
 </html>
