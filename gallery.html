@@ -148,22 +148,20 @@
 			};
 
 			const app = initializeApp(firebaseConfig);
-			const storage = getStorage(app);
-			// Points to the root reference
-			const storageRef = ref(storage);
-
-			// Points to 'images'
-			// const imagesRef = ref(storage, 'images');
-
-			let images = [];
-			const gallery = document.getElementById("thumbs");
-			let HTML = '';
-			const getURL = async () => {
-				try {
-					await listAll(storageRef).then((response) => {
-						response.items.forEach(imgRef => {
-							let i = 0;
-							getDownloadURL(imgRef).then((url) => {
+        const storage = getStorage(app);
+        // Points to the "images" folder reference
+        const storageRef = ref(storage, 'images');
+      
+        let images = [];
+        const gallery = document.getElementById("thumbs");
+        let HTML = '';
+      
+        const getURL = async () => {
+          try {
+            await listAll(storageRef).then((response) => {
+              response.items.forEach(imgRef => {
+                let i = 0;
+                getDownloadURL(imgRef).then((url) => {
 								HTML = `<div class="item-thumbs col-lg-3 col-md-4 col-sm-4 work design" data-id="id-${i}"
 										data-type="web">
 										<a class="work-box fancybox" data-fancybox-group="gallery" title="Gallery name"
@@ -177,6 +175,7 @@
 										<img src=${url} alt="">`;
 
 								gallery.innerHTML += HTML;
+								i++;
 							})
 
 						});
