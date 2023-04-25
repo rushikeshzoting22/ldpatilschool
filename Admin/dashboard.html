@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image to Firebase Storage</title>
+</head>
+<body>
+    <h1>Upload Your Images to the Website</h1>
+    <form>
+        <input type="file" id="fileInput">
+        <button type="button" onclick="uploadImage()">Upload</button>
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDF6mS0WvJKkzSaGA2DkdrA9z2s3lFcX34",
+				authDomain: "image-upload-5e77c.firebaseapp.com",
+				databaseURL: "https://image-upload-5e77c-default-rtdb.firebaseio.com",
+				projectId: "image-upload-5e77c",
+				storageBucket: "image-upload-5e77c.appspot.com",
+				messagingSenderId: "612533799200",
+				appId: "1:612533799200:web:301543a0682b9fe8cc2f45",
+				measurementId: "G-KKGXBBQ6LW"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to Firebase Storage
+        const storage = firebase.storage();
+
+        // Function to upload image to Firebase Storage
+        function uploadImage() {
+            // Get the selected image file from input
+            const file = document.getElementById("fileInput").files[0];
+
+            // Create a reference to the storage location of the image
+            const imageRef = storage.ref().child(`images/${file.name}`);
+
+            // Upload image to Firebase Storage
+            imageRef.put(file).then((snapshot) => {
+                console.log("Image uploaded successfully!");
+            });
+        }
+    </script>
+</body>
+</html>
