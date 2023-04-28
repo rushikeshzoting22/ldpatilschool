@@ -104,3 +104,16 @@ returnBtn.addEventListener("click", function() {
     main.style.display = "block";
     createacct.style.display = "none";
 });
+
+const logoutButton= ()=> {firebase.auth().signOut()
+  .then(() => {
+    // Sign-out successful.
+    console.log('User has been logged out.');
+    window.alert("User has been logged out");
+    window.location.href = "index.html";
+  })
+  .catch((error) => {
+    // An error happened.
+    console.log('Error occurred while logging out:', error);
+   
+  });}
