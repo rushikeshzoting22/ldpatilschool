@@ -54,7 +54,9 @@
 			</div>
 		</header>
 		<!-- / header -->
-		<h2 class="sname"><morquee>L.D. Patil Academy English Medium School <br> Penguin Kindergarten</morquee></h2>
+		<h2 class="sname">
+			<morquee>L.D. Patil Academy English Medium School <br> Penguin Kindergarten</morquee>
+		</h2>
 		<div class="divider" style="height: 80px; text-align: center;">
 			<h2 class="pageTitle">Gallery</h2>
 		</div>
@@ -96,13 +98,14 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-12 text-center">
-						<h2 class="footer-heading"><a href="#" class="logo">L. D. Patil Academy English Medium School <br> Penguin Kindergarten</a></h2>
+						<h2 class="footer-heading"><a href="#" class="logo">L. D. Patil Academy English Medium School
+								<br> Penguin Kindergarten</a></h2>
 						<p class="menu">
 							<a href="index.html">Home</a>
-                            <a href="about.html">About Us</a>
-                            <a href="courses.html">Academics</a>
-                            <a href="gallery.html">Gallery</a>
-                            <a href="contact.html">Contact</a>
+							<a href="about.html">About Us</a>
+							<a href="courses.html">Academics</a>
+							<a href="gallery.html">Gallery</a>
+							<a href="contact.html">Contact</a>
 						</p>
 						<div class="col item social"><a href="https://youtube.com/@jyotidinkarpatilkatale8553"><i
 									class="fa fa-youtube"></i></a>
@@ -145,23 +148,23 @@
 			};
 
 			const app = initializeApp(firebaseConfig);
-        const storage = getStorage(app);
-        // Points to the "images" folder reference
-        const storageRef = ref(storage, 'images');
-      
-        let images = [];
-        const gallery = document.getElementById("thumbs");
-        let HTML = '';
-      
-        const getURL = async () => {
-          try {
-            await listAll(storageRef).then((response) => {
-              response.items.forEach(imgRef => {
-                let i = 0;
-                getDownloadURL(imgRef).then((url) => {
-								HTML = `<div class="item-thumbs col-lg-3 col-md-4 col-sm-4 work design" data-id="id-${i}"
+			const storage = getStorage(app);
+			// Points to the "images" folder reference
+			const storageRef = ref(storage, 'images');
+
+			let images = [];
+			const gallery = document.getElementById("thumbs");
+			let HTML = '';
+
+			const getURL = async () => {
+				try {
+					await listAll(storageRef).then((response) => {
+						response.items.forEach(imgRef => {
+							let i = 0;
+							getDownloadURL(imgRef).then((url) => {
+								HTML = `<div class="item-thumbs col-lg-3 col-md-4 col-sm-4 work design work-img-box" data-id="id-${i}"
 										data-type="web">
-										<a class="work-box fancybox" data-fancybox-group="gallery" title="Gallery name"
+										<a class="work-box fancybox" data-fancybox-group="gallery" title="photo"
 											href=${url}>
 											<div class="overlay">
 												<div class="overlay-caption">
@@ -169,7 +172,8 @@
 												</div>
 											</div>
 										</a>
-										<img src=${url} alt="">`;
+										<img src=${url} class="work-img" alt="">
+									</div> `;
 
 								gallery.innerHTML += HTML;
 								i++;
