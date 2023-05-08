@@ -21,7 +21,7 @@ section {
 }
 
 
-.sname {
+/* .sname {
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -31,33 +31,39 @@ section {
 	background-color: #62c2d0;
 	font-size: 320%;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+
+.sname {
+	text-align: center;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid;
+	color: #72150f;
+	font-weight: bolder;
+	background-color: #ecc8b2;
+	font-size: 320%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-/* Extra small devices (phones) */
-@media only screen and (max-width: 480px) {
-	.sname {
-	  font-size: 200%;
-	}
+/* ================ BREAKPOINS ===============*/
+/* For large devices  */
+@media screen and (max-width: 992px) {
+	
   }
   
-  /* Small devices (tablets) */
-  @media only screen and (min-width: 481px) and (max-width: 767px) {
-	.sname {
-	  font-size: 250%;
-	}
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+	
   }
   
-  /* Medium devices (laptops, desktops) */
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-	.sname {
-	  font-size: 280%;
-	}
+  @media screen and (max-width: 576px) {
   }
   
-  /* Large devices (large laptops, desktops) */
-  @media only screen and (min-width: 1024px) {
+  /* For small devices */
+  @media screen and (max-width: 350px) {
 	.sname {
-	  font-size: 320%;
+		font-size: 2.5rem;
 	}
+	
   }
   
 .sname1 {
@@ -407,18 +413,6 @@ input[type="submit"] {
 .mobile-navigation .menu a small {
 	display: block;
 	color: #a59e95;
-}
-
-.sname {
-	text-align: center;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	border: 2px solid;
-	color: #72150f;
-	font-weight: bolder;
-	background-color: #ecc8b2;
-	font-size: 320%;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .divider {
@@ -786,6 +780,7 @@ section.hero-text {
 	background: #2596be;
 	padding: 50px 0;
 	color: #fff;
+	font-size: 1.5rem;
 }
 
 
